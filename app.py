@@ -39,4 +39,33 @@ if st.sidebar.button("Saber informacoes"):
     ### printa qualquer coisa generica! :)
     st.write("# Pessoas", pessoas)
 
+if st.sidebar.checkbox("Aceito"):
+    st.write("Aceito! Marcado")
+
+### radiobuton
+opcao = st.sidebar.radio("Selecione uma opcao",("Opcao 1", "Opcao 2"))
+if opcao == "Opcao 1":
+    st.sidebar.header("Selecionei 1")
+elif opcao == "Opcao 2":
+    st.sidebar.header("Selecionei 2")
+
+
+
+
+###### selectbox
+selectbox = st.sidebar.selectbox("Seleciona uma opcao",
+("Preco", "Taxa de ocupacao"))
+if selectbox == "Preco":
+    st.table(df)
+    st.dataframe(df)
+elif selectbox == "Taxa de ocupacao":
+    st.line_chart(df)
+    st.bar_chart(df)
+
+
+#### multiselect
+opcao_mult = st.sidebar.multiselect("Selecione uma opcao",
+("Preco", "Taxa"),
+("Preco"))
+
 st.sidebar.text("Clar @ 2023")
